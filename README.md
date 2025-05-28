@@ -1,9 +1,10 @@
 # Git Crop Bash Script
 
-Git Crop is a simple bash script that allows you to safely delete all branches in a LOCAL git repository with a single command matching a given pattern.  
+Git Crop is a simple bash script that allows you to safely delete all branches matching a given pattern in a LOCAL git repository with a single command.
+
 The search pattern automatically excludes the 'main' branch to prevent deleting it by accident. Other protected branches patterns can be added into the 'grep -v' command in the script.
 
-This script is easier and safer than using the Git command below:
+This script is easier and safer than using the usual Git command below:
 
 ```bash
 git branch -D $(git branch --list 'pattern/*')
@@ -18,6 +19,17 @@ gitcrop 'feature/*'
 ```
 
 This will delete all branches in the current Git repo that match the pattern "feature/\*" first listing them and checking you want them deleted before deleting them.
+
+Example - delete all branches except 'main':
+
+```bash
+gitcrop '*'
+
+WARNING: The following branches will be PERMANENTLY deleted:
+  chore/apply_patch-2
+  chore/pr-21
+Are you sure? (y/n)
+```
 
 ## Installation
 
