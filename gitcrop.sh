@@ -2,9 +2,9 @@
 
 # Ensure a pattern is provided
 if [ -z "$1" ]; then
-    echo "Usage: GitCrop '<pattern>'"
+    echo "Usage: gitcrop '<pattern>'"
     echo "This script deletes all local branches matching the specified pattern."
-    echo "Example: GitCrop 'feature/*'"
+    echo "Example: gitcrop 'feature/*'"
     exit 1
 fi
 

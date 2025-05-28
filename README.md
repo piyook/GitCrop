@@ -13,7 +13,7 @@ git branch -D $(git branch --list 'pattern/*')
 To use Git Crop, simply run the script in a Git repo with the pattern you want to match as an argument. For example:
 
 ```bash
-GitCrop 'feature/*'
+gitcrop 'feature/*'
 ```
 
 This will delete all branches in the current Git repo that match the pattern "feature/\*" first listing them and checking you want them deleted before deleting them.
@@ -27,19 +27,19 @@ To install Git Crop, simply copy the script to a directory on your PATH and make
 1. Copy the file to a desired location:
 
 ```bash
-cp GitCrop.sh /usr/local/bin
+cp gitcrop.sh /usr/local/bin
 ```
 
 2. Make it executable:
 
 ```bash
-chmod +x /usr/local/bin/GitCrop.sh
+chmod +x /usr/local/bin/gitcrop.sh
 ```
 
 3. Add the following line to your .bash_aliases file:
 
 ```bash
-alias GitCrop='/usr/local/bin/GitCrop.sh'
+alias gitcrop='/usr/local/bin/gitcrop.sh'
 ```
 
 4. Check it works:
@@ -47,43 +47,43 @@ alias GitCrop='/usr/local/bin/GitCrop.sh'
 ```bash
 source ~/.bashrc
 
-GitCrop
+gitcrop
 ```
 
 ### Windows Powershell:
 
 If using WSL then add as above for Linux and then to make this execute in Powershell:
 
-1. Copy the GitCrop.bat batch file to any suitable location specified in your PATH E.g: C:\Windows
+1. Copy the gitcrop.bat batch file to any suitable location specified in your PATH E.g: C:\Windows
 
 ```PowerShell
-Move-Item GitCrop.bat C:\Windows
+Move-Item gitcrop.bat C:\Windows
 ```
 
 2. Check it works:
 
 ```PowerShell
-GitCrop
+gitcrop
 ```
 
 ### Note for Git Bash on Windows:
 
-1. Copy the GitCrop.sh file to any suitable location
+1. Copy the gitcrop.sh file to any suitable location
 
 ```bash
-cp GitCrop.bat ~/Scripts
+cp gitcrop.bat ~/Scripts
 ```
 
 2. Make it executable:
 
 ```bash
-chmod +x ~/Scripts/GitCrop.sh
+chmod +x ~/Scripts/gitcrop.sh
 ```
 
 3. Add the following line to your .bash_aliases file:
 
 ```bash
-alias GitCrop='~/Scripts/GitCrop.sh'
+alias gitcrop='~/Scripts/gitcrop.sh'
 ```
 
 ## License
