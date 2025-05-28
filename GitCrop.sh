@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# Ensure a pattern is provided
+if [ -z "$1" ]; then
+    echo "Usage: GitCrop '<pattern>'"
+    echo "This script deletes all local branches matching the specified pattern."
+    echo "Example: GitCrop 'feature/*'"
+    exit 1
+fi
+
+PATTERN="$1"
+
+# Get a list of branches matching the pattern
+BRANCHES=$(git branch | grep -E "$PATTERN")
+
+# Check if any branches match the pattern
+if [ -z "$BRANCHES" ]; then
+    echo "No branches found matching pattern: $PATTERN"
+    exit 0
+fi
+
+# Confirm deletion
+echo "WARNING: The following branches will be PERMANENTLY deleted:"
+echo "$BRANCHES"
+read -p "Are you sure? (y/n) " CONFIRM
+
+if [[ "$CONFIRM" =~ ^[Yy]$ ]]; then
+    echo "$BRANCHES" | xargs git branch -D
+    echo "Branches deleted."
+else
+    echo "Deletion cancelled."
+fi
