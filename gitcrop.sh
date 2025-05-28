@@ -10,7 +10,7 @@ fi
 
 PATTERN="$1"
 
-# Get a list of branches matching the pattern, excluding 'main'
+# Get a list of branches matching the pattern, excluding 'main'. Add other branches to exclude as needed.
 BRANCHES=$(git branch | grep -E "$PATTERN" | grep -v 'main')
 
 

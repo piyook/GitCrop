@@ -1,6 +1,7 @@
 # Git Crop Bash Script
 
-Git Crop is a simple bash script that allows you to safely delete all branches in a git repository with a single command matching a given pattern.
+Git Crop is a simple bash script that allows you to safely delete all branches in a LOCAL git repository with a single command matching a given pattern.  
+The search pattern automatically excludes the 'main' branch to prevent deleting it by accident. Other protected branches patterns can be added into the 'grep -v' command in the script.
 
 This script is easier and safer than using the Git command below:
 
