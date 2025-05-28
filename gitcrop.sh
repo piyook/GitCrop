@@ -10,8 +10,9 @@ fi
 
 PATTERN="$1"
 
-# Get a list of branches matching the pattern
-BRANCHES=$(git branch | grep -E "$PATTERN")
+# Get a list of branches matching the pattern, excluding 'main'
+BRANCHES=$(git branch | grep -E "$PATTERN" | grep -v 'main')
+
 
 # Check if any branches match the pattern
 if [ -z "$BRANCHES" ]; then
