@@ -1,8 +1,12 @@
-# Git Crop Bash Script
+# Gitcrop Branch Batch Deletion Command Line Utility for Git Repositories :scissors:
+
+Lets face it - those pesky old redundant local branches can quickly start to get out of hand and clog up your repo. :face_with_spiral_eyes:
+
+Deleting branches one by one can be a real pain and using the usual Git command can mean accidentally deleting the wrong branch or deleting a branch you don't want to delete. :cursing_face:
 
 Git Crop is a simple bash script that allows you to safely delete all branches matching a given pattern in a LOCAL git repository with a single command.
 
-The search pattern automatically excludes the 'main' branch to prevent deleting it by accident. Other protected branches patterns can be added into the 'grep -v' command in the script.
+The search pattern automatically excludes the 'main' or 'develop' branches to prevent deleting them by accident. Other protected branches patterns can be added into the EXCEPTIONS variable command in the script.
 
 This script is easier and safer than using the usual Git command below:
 
@@ -15,15 +19,15 @@ git branch -D $(git branch --list 'pattern/*')
 To use Git Crop, simply run the script in a Git repo with the pattern you want to match as an argument. For example:
 
 ```bash
-gitcrop 'feature/*'
+gitcrop feature/
 ```
 
-This will delete all branches in the current Git repo that match the pattern "feature/\*" first listing them and checking you want them deleted before deleting them.
+This will delete all branches in the current Git repo that match the pattern "feature/" first listing them and checking you want them deleted before deleting them.
 
-Example - delete all branches except 'main':
+Example - to nuke ALL branches except 'main' or 'develop' use . to match all branches :bomb: :bomb: :boom:
 
 ```bash
-gitcrop '*'
+gitcrop .
 
 WARNING: The following branches will be PERMANENTLY deleted:
   chore/apply_patch-2
