@@ -39,6 +39,8 @@ Are you sure? (y/n)
 
 - use '--merged' or '-m' to only delete branches MERGED into main (or master) branch matching the supplied pattern
 
+<i>Note: branches that are newly created from the main branch with no new commits that match the search pattern will also be deleted since they are fully merged by default.</i>
+
 E.g
 
 ```bash
