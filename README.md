@@ -1,12 +1,12 @@
 # Gitcrop Branch Batch Deletion Command Line Utility for Git Repositories :scissors:
 
-Lets face it - those pesky old redundant local branches can quickly start to get out of hand and clog up your repo. :face_with_spiral_eyes:
+Lets face it - old redundant branches can quickly start to get out of hand and clog up your local repo. :face_with_spiral_eyes:
 
-Deleting branches one by one can be a real pain and using the usual Git command can mean accidentally deleting the wrong branch or deleting a branch you don't want to delete. :cursing_face:
+Tidying up a local repo by deleting branches one by one can be a real pain and using the usual Git command can mean accidentally deleting the wrong branch or deleting a branch you don't want to delete. :cursing_face:
 
 Git Crop is a simple bash script that allows you to safely delete all branches matching a given pattern in a LOCAL git repository with a single command.
 
-The search pattern automatically excludes the 'main' or 'develop' branches to prevent deleting them by accident. Other protected branches patterns can be added into the EXCEPTIONS variable command in the script.
+The search pattern automatically excludes protected branches such as the default ('main' or 'master') branch and any 'develop' branches to prevent deleting them by accident. Other protected branches patterns can be added into the EXCEPTIONS variable command in the script.
 
 This script is easier and safer than using the usual Git command below:
 
@@ -34,6 +34,20 @@ WARNING: The following branches will be PERMANENTLY deleted:
   chore/pr-21
 Are you sure? (y/n)
 ```
+
+## Options
+
+- use '--merged' or '-m' to only delete branches MERGED into main (or master) branch matching the supplied pattern
+
+<i>Note: branches that are newly created from the main branch with no new commits that match the search pattern will also be deleted since they are fully merged by default.</i>
+
+E.g
+
+```bash
+gitcrop feature/ --merged
+```
+
+will only delete branches merged into main that match the pattern 'feature/'
 
 ## Installation
 
