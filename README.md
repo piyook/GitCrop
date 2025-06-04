@@ -27,7 +27,7 @@ gitcrop feature/
 
 This will delete all branches in the current Git repo that match the pattern "feature/" first listing them and checking you want them deleted before deleting them.
 
-Example - to delete ALL branches except 'main' or 'develop' use . to match all branches :bomb: :bomb: :boom:
+To delete ALL branches except protected ones ('main' or 'develop') use --nuke option :bomb: :bomb: :boom:
 
 ```bash
 gitcrop --nuke
