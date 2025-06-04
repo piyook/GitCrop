@@ -17,6 +17,15 @@ PATTERN=""
 for arg in "$@"; do
     if [ "$arg" == "--merged" ] || [ "$arg" == "-m" ]; then
         MERGED=true
+    elif [[ "$arg" == "--help" || "$arg" == "-h" ]]; then
+        echo ""
+        echo "Usage: gitcrop [--merged | -m] <pattern>"
+        echo ""
+        echo "Use --merged or -m to delete only branches that are fully merged into the main branch."
+        echo "Branches matching the pattern will be deleted, excluding: $EXCEPTIONS"
+        echo ""
+        echo "Example: gitcrop --merged 'feature/*' or gitcrop 'bugfix/*'"
+        exit 0
     else
         PATTERN="$arg"
     fi
