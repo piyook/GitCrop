@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Verify the main branch name
 DEFAULT_BRANCH="main"

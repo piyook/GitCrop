@@ -37,6 +37,7 @@ Are you sure? (y/n)
 
 ## Options
 
+- use '--help' or '-h' to display a help message
 - use '--merged' or '-m' to only delete branches MERGED into main (or master) branch matching the supplied pattern
 
 <i>Note: branches that are newly created from the main branch with no new commits that match the search pattern will also be deleted since they are fully merged by default.</i>
@@ -47,7 +48,7 @@ E.g
 gitcrop feature/ --merged
 ```
 
-will only delete branches merged into main that match the pattern 'feature/'
+will only delete branches merged into main (or are identical) that match the pattern 'feature/'
 
 ## Installation
 
@@ -55,37 +56,25 @@ To install Git Crop, simply copy the script to a directory on your PATH and make
 
 ### Linux / Mac / WSL:
 
-1. Copy the file to a desired location:
+1. Run the setup script:
 
 ```bash
-cp gitcrop.sh /usr/local/bin
+bash setup_linux.sh
 ```
 
-2. Make it executable:
-
-```bash
-chmod +x /usr/local/bin/gitcrop.sh
-```
-
-3. Add the following line to your .bash_aliases file:
-
-```bash
-alias gitcrop='/usr/local/bin/gitcrop.sh'
-```
-
-4. Check it works:
+2. Check it works:
 
 ```bash
 source ~/.bashrc
 
-gitcrop
+gitcrop --help
 ```
 
 ### Windows Powershell:
 
-If using WSL then add as above for Linux and then to make this execute in Powershell:
+Setup using WSL with your distro of choice as above for Linux and then:
 
-1. Copy the gitcrop.bat batch file to any suitable location specified in your PATH E.g: C:\Windows
+1. Use Powershell to copy the gitcrop.bat batch file to any suitable location specified in your PATH E.g: C:\Windows
 
 ```PowerShell
 Move-Item gitcrop.bat C:\Windows
@@ -94,27 +83,25 @@ Move-Item gitcrop.bat C:\Windows
 2. Check it works:
 
 ```PowerShell
-gitcrop
+gitcrop --help
 ```
 
 ### Note for Git Bash on Windows:
 
-1. Copy the gitcrop.sh file to any suitable location
+1. Run the setup script:
 
 ```bash
-cp gitcrop.bat ~/Scripts
+bash setup_gitbash.sh
 ```
 
-2. Make it executable:
+This creates a Scripts directory in the user's home directory (if one doesn't already exist) and copies the gitcrop.sh script into it, makes it executable and adds an alias for easy access.
+
+2. Check it works:
 
 ```bash
-chmod +x ~/Scripts/gitcrop.sh
-```
+source ~/.bashrc
 
-3. Add the following line to your .bash_aliases file:
-
-```bash
-alias gitcrop='~/Scripts/gitcrop.sh'
+gitcrop --help
 ```
 
 ## License
