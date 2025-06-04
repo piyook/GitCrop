@@ -27,10 +27,10 @@ gitcrop feature/
 
 This will delete all branches in the current Git repo that match the pattern "feature/" first listing them and checking you want them deleted before deleting them.
 
-Example - to nuke ALL branches except 'main' or 'develop' use . to match all branches :bomb: :bomb: :boom:
+Example - to delete ALL branches except 'main' or 'develop' use . to match all branches :bomb: :bomb: :boom:
 
 ```bash
-gitcrop .
+gitcrop --nuke
 
 WARNING: The following branches will be PERMANENTLY deleted:
   chore/apply_patch-2
@@ -41,6 +41,7 @@ Are you sure? (y/n)
 ## Options
 
 - use '--help' or '-h' to display a help message
+- use '--nuke' to delete ALL local branches except 'main' or 'develop'
 - use '--merged' or '-m' to only delete branches MERGED into main (or master) branch matching the supplied pattern
 
 <i>Note: branches that are newly created from the main branch with no new commits that match the search pattern will also be deleted since they are fully merged by default.</i>
