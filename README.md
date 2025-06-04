@@ -35,6 +35,10 @@ gitcrop --nuke
 WARNING: The following branches will be PERMANENTLY deleted:
   chore/apply_patch-2
   chore/pr-21
+  test/test-1
+  feat/jira-123/new-options
+  fix/jira-125/comments
+  pr-22
 Are you sure? (y/n)
 ```
 
